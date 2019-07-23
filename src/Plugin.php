@@ -78,6 +78,10 @@ class Plugin implements PluginInterface, EventSubscriberInterface
     public function buildUrl($url, $params = []) {
       $urlinfo = parse_url($url);
 
+      if (!$urlinfo) {
+        return $url;
+      }
+
       $query = isset($urlinfo['query']) ? $urlinfo['query'] : '';
 
       parse_str($query, $url_params);
@@ -89,7 +93,11 @@ class Plugin implements PluginInterface, EventSubscriberInterface
 
       $query = http_build_query($params);
 
-      $url = sprintf('%s://%s%s%s', $urlinfo['scheme'], $urlinfo['host'], $urlinfo['path'], $query ? '?' . $query : '');
+      $scheme = isset($urlinfo['scheme']) ? $urlinfo['scheme'] : 'http';
+      $host = isset($urlinfo['host']) ? $urlinfo['host'] : '';
+      $path = isset($urlinfo['path']) ? $urlinfo['path'] : '';
+
+      $url = sprintf('%s://%s%s%s', $scheme, $host, $path, $query ? '?' . $query : '');
 
       return $url;
     }
@@ -108,6 +116,7 @@ class Plugin implements PluginInterface, EventSubscriberInterface
 
         if ($this->isBenignwarePackageUrl($url)) {
 
+          $this->io->write(PHP_EOL . '<options=bold>PREFILE' . $url . '</>');
           $url = $this->buildUrl($url, [
             'key' => getenv('BENIGNWARE_LICENSE_KEY')
           ]);
@@ -122,28 +131,26 @@ class Plugin implements PluginInterface, EventSubscriberInterface
           );
           $event->setRemoteFilesystem($acfRfs);
 
-          $this->io->write(PHP_EOL . '<options=bold>Thanks for using benignware!</>');
-          // $this->io->write(PHP_EOL . '<options=bold>URL' . $url . '</>');
+          $this->io->write(PHP_EOL . '<options=bold>Thanks for using benignware!</>' . PHP_EOL);
         }
     }
 
     public function packageInstall(PackageEvent $event)
     {
-        /*
-        $plugin_repo = 'https://github.com/benignware/composer-plugin-demo.git';
-        $sourceUrl = $event->getInstalledRepo()->getPackages()[0]->getSourceUrl();
-        */
 
         $package = $this->getPackageFromOperation($event->getOperation());
         list($vendor, $name) = explode('/', $package->getName());
 
         if ($vendor === 'benignware') {
-          $version = 'v' . $package->getPrettyVersion();
-          $distUrl = $this->buildUrl($package->getDistUrl(), [
-            'ref' => $version
-          ]);
-          $package->setDistUrl($distUrl);
-          // $this->io->write(PHP_EOL . '<info>INSTALL: ' . $distUrl . '</info>');
+          $version = $package->getPrettyVersion();
+          $distUrl = $package->getDistUrl();
+
+          if ($this->isBenignwarePackageUrl($distUrl)) {
+            $distUrl = $this->buildUrl($distUrl, [
+              'ref' => $version
+            ]);
+            $package->setDistUrl($distUrl);
+          }
         }
     }
 }
