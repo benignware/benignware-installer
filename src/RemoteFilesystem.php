@@ -1,4 +1,6 @@
-<?php namespace Benignware;
+<?php
+
+namespace Benignware\BenignwareInstaller;
 
 use Composer\Config;
 use Composer\IO\IOInterface;
