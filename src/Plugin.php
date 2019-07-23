@@ -18,6 +18,11 @@ use Benignware\BenignwareInstaller\RemoteFilesystem;
 
 use Dotenv\Dotenv;
 
+if (file_exists(getcwd() . DIRECTORY_SEPARATOR . '.env')) {
+    $dotenv = new Dotenv(getcwd());
+    $dotenv->load();
+}
+
 class Plugin implements PluginInterface, EventSubscriberInterface
 {
     /**
@@ -40,6 +45,8 @@ class Plugin implements PluginInterface, EventSubscriberInterface
     {
         $this->composer = $composer;
         $this->io = $io;
+
+
     }
 
     /**
@@ -92,10 +99,7 @@ class Plugin implements PluginInterface, EventSubscriberInterface
      */
     public function init(Event $event)
     {
-        if (file_exists(getcwd() . DIRECTORY_SEPARATOR . '.env')) {
-            $dotenv = new Dotenv(getcwd());
-            $dotenv->load();
-        }
+
     }
 
     public function preFileDownload(PreFileDownloadEvent $event)
