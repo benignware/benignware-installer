@@ -123,7 +123,7 @@ class Plugin implements PluginInterface, EventSubscriberInterface
           $event->setRemoteFilesystem($acfRfs);
 
           $this->io->write(PHP_EOL . '<options=bold>Thanks for using benignware!</>');
-          $this->io->write(PHP_EOL . '<options=bold>URL' . $url . '</>');
+          // $this->io->write(PHP_EOL . '<options=bold>URL' . $url . '</>');
         }
     }
 
