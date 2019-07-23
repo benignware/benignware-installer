@@ -1,0 +1,22 @@
+{
+    "name": "benignware/benignware-installer",
+    "description": "A composer plugin for installing benignware's packages",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "require": {
+        "php": "^7.0",
+        "composer-plugin-api": "^1.0",
+        "vlucas/phpdotenv": "^2.2"
+    },
+    "require-dev": {
+        "composer/composer": "^1.0.2"
+    },
+    "autoload": {
+      "psr-4": {
+        "Benignware\\BenignwareInstaller\\": "src"
+      }
+    },
+    "extra": {
+        "class": "Benignware\\BenignwareInstaller\\Plugin"
+    }
+}
