@@ -115,8 +115,6 @@ class Plugin implements PluginInterface, EventSubscriberInterface
         $url = $event->getProcessedUrl();
 
         if ($this->isBenignwarePackageUrl($url)) {
-
-          $this->io->write(PHP_EOL . '<options=bold>PREFILE' . $url . '</>');
           $url = $this->buildUrl($url, [
             'key' => getenv('BENIGNWARE_LICENSE_KEY')
           ]);
