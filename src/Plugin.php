@@ -14,7 +14,7 @@ use Composer\Installer\PackageEvents;
 use Composer\Plugin\PreFileDownloadEvent;
 use Symfony\Component\Console\Helper\Table;
 
-use Benignware\RemoteFilesystem;
+use Benignware\BenignwareInstaller\RemoteFilesystem;
 
 use Dotenv\Dotenv;
 
