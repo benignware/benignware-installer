@@ -65,7 +65,7 @@ class Plugin implements PluginInterface, EventSubscriberInterface
     }
 
     public function isBenignwarePackageUrl($url) {
-      return (strpos($url, self::PACKAGE_NAME) !== false);
+      return (strpos($url, self::DOWNLOAD_BASE) !== false);
     }
 
     public function buildUrl($url, $params = []) {
