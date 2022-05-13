@@ -1,0 +1,50 @@
+html {
+  height: 100%;
+}
+
+body, html {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  flex-grow: 1;
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &-header {
+    &.sticky-top {
+      .admin-bar & {
+        top: 46px;
+    
+        @media screen and (min-width: 783px) {
+          top: 32px;
+        }
+      }
+    }
+  }
+
+  &-content {
+    flex: 0 1 auto;
+    margin-bottom: auto;
+  }
+
+  &-header.sticky-top &-content {
+    
+  }
+
+  &-footer {
+  }
+
+  .admin-bar & {
+    margin-top: 46px;
+
+    @media screen and (min-width: 783px) {
+      margin-top: 32px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+:root {
+  --raudio-border-width: 0;
+}
+
+.raudio {
+
+  // &-player:not(#{&}-player-xs) {
+  //   @extend .card;
+  // }
+  
+  // &-player:not(#{&}-player-xs) &-thumbnail {
+  //   @extend .card-img-top;
+  // }
+  
+  // &-player:not(#{&}-player-xs) &-body {
+  //   @extend .card-body;
+  // }
+
+  &-toggle {
+    border-radius: 50%;
+  }
+
+  // &-history {
+  //   @extend .list-group;
+
+  //   &-item {
+  //     @extend .list-group-item;
+  //     margin: 0;
+  //   }
+  // }
+}

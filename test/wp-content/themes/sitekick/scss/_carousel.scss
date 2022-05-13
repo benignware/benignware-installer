@@ -1,0 +1,19 @@
+.carousel {
+  &-control {
+    &-prev {
+      justify-content: flex-start;
+    }
+
+    &-next {
+      justify-content: flex-end;
+    }
+
+    &-next,
+    &-prev {
+      &-icon {
+        width: 3rem;
+        height: 4rem;
+      }
+    }
+  }
+}

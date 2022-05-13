@@ -1,0 +1,6 @@
+.nav {
+  &-link {
+    text-transform: var(--nav-link-text-transform, $nav-link-text-transform);
+    font-weight: var(--nav-link-font-weight, $nav-link-font-weight);
+  }
+}

@@ -1,0 +1,1 @@
+<?php echo do_shortcode('[user_profile_avatar_upload]'); ?>

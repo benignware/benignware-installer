@@ -1,0 +1,22 @@
+:root {
+  --font-family-base: 'Arial';
+  --headings-font-family: 'Arial';
+  --display-font-family: 'Courier New';
+
+  --background-color: #{$body-bg};
+  --textcolor: #{$body-color};
+
+  --border-color-r: #{red($border-color)};
+  --border-color-g: #{green($border-color)};
+  --border-color-b: #{blue($border-color)};
+
+  --link-color-r: #{red($link-color)};
+  --link-color-g: #{green($link-color)};
+  --link-color-b: #{blue($link-color)};
+
+  @each $name, $color in $theme-colors {
+    --#{$name}-r: #{red($color)};
+    --#{$name}-g: #{green($color)};
+    --#{$name}-b: #{blue($color)};
+  }
+}

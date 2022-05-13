@@ -1,0 +1,12 @@
+:root {
+  --sidebar-top: #{56}px; // Pixels only
+}
+
+.admin-bar {
+  --sidebar-top: #{32 + 56}px;
+}
+
+.sidebar {
+  position: sticky;
+  top: var(--sidebar-top);
+}

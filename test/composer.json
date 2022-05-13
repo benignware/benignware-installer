@@ -1,0 +1,45 @@
+{
+  "name": "benignware/benignware-installer-test",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "description": "Test config for benignware-installer plugin",
+  "homepage": "http://github.com/benignware/benignware-installer",
+  "authors": [
+    {
+      "name": "Rafael Nowrotek",
+      "email": "mail@benignware.com",
+      "homepage": "https://github.com/benignware"
+    }
+  ],
+  "repositories": [{
+    "type": "path",
+    "url": "/Users/rafaelnowrotek/Projects/benignware-installer"
+  }, {
+    "type": "package",
+    "package": {
+      "name": "benignware/sitekick",
+      "version": "v1.0.0-beta.2",
+      "type": "wordpress-theme",
+      "dist": {
+        "type": "zip",
+        "url": "https://hub.benignware.com/packages/wp-sitekick/download"
+      }
+    },
+    "require": {
+      "benignware/benignware-installer": "0.0.4",
+      "composer/installers": "^1.0"
+    }
+  }],
+  "require": {
+    "php": ">=5.3.0",
+    "composer/installers": "~1.0",
+    "benignware/benignware-installer": "0.0.4",
+    "benignware/sitekick": ">=1.0.0-beta.2"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "benignware/benignware-installer": true
+    }
+  }
+}

@@ -1,0 +1,92 @@
+// Vendor
+
+// Fontawesome
+$fa-font-path: '../node_modules/@fortawesome/fontawesome-free/webfonts';
+
+// Bootstrap overrides
+// $carousel-control-prev-icon-bg: '';
+// $carousel-control-next-icon-bg: '';
+// $form-select-indicator: '';
+// $btn-close-bg: '';
+// $form-switch-bg-image: '';
+// $form-switch-focus-bg-image: '';
+// $form-switch-checked-bg-image: '';
+// $form-check-input-indeterminate-bg-image: '';
+// $form-check-radio-checked-bg-image: '';
+// $form-check-input-checked-bg-image: '';
+// $accordion-button-active-icon: '';
+// $accordion-button-icon: '';
+// $navbar-light-toggler-icon-bg: '';
+// $navbar-dark-toggler-icon-bg: '';
+
+$font-family-base: var(--font-family-base, 'Arial');
+$headings-font-family: var(--headings-font-family, var(--font-family-base, 'Arial'));
+
+$enable-transitions: true;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1110px,
+  // xxl: 1110px
+);
+
+// Hamburgers defaults
+$hamburger-padding-x           : 15px;
+$hamburger-padding-y           : 15px;
+$hamburger-layer-width         : 40px;
+$hamburger-layer-height        : 4px;
+$hamburger-layer-spacing       : 6px;
+$hamburger-layer-color         : currentColor;
+$hamburger-layer-border-radius : 4px;
+$hamburger-hover-opacity       : 1;
+$hamburger-active-layer-color  : $hamburger-layer-color;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+ 
+// To use CSS filters as the hover effect instead of opacity, 
+// set $hamburger-hover-use-filter as true and 
+// change the value of $hamburger-hover-filter accordingly. 
+$hamburger-hover-use-filter   : false;
+$hamburger-hover-filter       : none;
+$hamburger-active-hover-filter: $hamburger-hover-filter;
+
+// Remove or comment out the hamburger types you don’t want 
+// or need, so they get excluded from the compiled CSS. 
+$hamburger-types: (
+  3dx,
+  3dx-r,
+  3dy,
+  3dy-r,
+  3dxy,
+  3dxy-r,
+  arrow,
+  arrow-r,
+  arrowalt,
+  arrowalt-r,
+  arrowturn,
+  arrowturn-r,
+  boring,
+  collapse,
+  collapse-r,
+  elastic,
+  elastic-r,
+  emphatic,
+  emphatic-r,
+  minus,
+  slider,
+  slider-r,
+  spring,
+  spring-r,
+  stand,
+  stand-r,
+  spin,
+  spin-r,
+  squeeze,
+  vortex,
+  vortex-r
+);
+
+// CUSTOM VARS
+
+$nav-link-text-transform: initial;
