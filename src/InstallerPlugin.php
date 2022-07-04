@@ -29,8 +29,6 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface
     {
         $this->composer = $composer;
         $this->io = $io;
-
-        $this->io->write(PHP_EOL . '<options=bold>Thanks for using benignware!</>' . PHP_EOL);
     }
 
     public function deactivate(Composer $composer, IOInterface $io)
@@ -106,8 +104,6 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface
         : $operation->getTargetPackage();
 
       list($vendor, $name) = explode('/', $package->getName());
-
-      $this->io->write(PHP_EOL . '<options=bold>Thanks for using benignware!' . $package->getName() . '</>' . PHP_EOL);
 
       if ($vendor === 'benignware') {
         $version = $package->getPrettyVersion();
