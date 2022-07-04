@@ -49,7 +49,7 @@ class InstallerPlugin implements PluginInterface, EventSubscriberInterface
     }
 
     public function isBenignwarePackageUrl($url) {
-      return (strpos($url, self::HUB_URL) !== false);
+      return !!$url && (strpos($url, self::HUB_URL) !== false);
     }
 
     public function buildUrl($url, $params = []) {
