@@ -11,12 +11,12 @@
     ),
     'versions' => array(
         'benignware/benignware-installer' => array(
-            'pretty_version' => '0.0.4',
-            'version' => '0.0.4.0',
+            'pretty_version' => '0.0.5',
+            'version' => '0.0.5.0',
             'type' => 'composer-plugin',
             'install_path' => __DIR__ . '/../benignware/benignware-installer',
             'aliases' => array(),
-            'reference' => 'c4b617a28f9b2fc3b5af5fbf0fc2698415f0277f',
+            'reference' => '7c4604e503e0fb5bd8cefcc40db96e1bf4d1ff3e',
             'dev_requirement' => false,
         ),
         'benignware/benignware-installer-test' => array(
@@ -59,12 +59,12 @@
             ),
         ),
         'symfony/polyfill-ctype' => array(
-            'pretty_version' => 'v1.25.0',
-            'version' => '1.25.0.0',
+            'pretty_version' => 'v1.26.0',
+            'version' => '1.26.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-ctype',
             'aliases' => array(),
-            'reference' => '30885182c981ab175d4d034db0f6f469898070ab',
+            'reference' => '6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4',
             'dev_requirement' => false,
         ),
         'vlucas/phpdotenv' => array(
